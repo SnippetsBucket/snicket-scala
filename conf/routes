@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                           controllers.Application.index
+GET     /codegen                    controllers.Application.codegen
 
 # API
 GET     /api/list                   controllers.api.SnippetController.list()
