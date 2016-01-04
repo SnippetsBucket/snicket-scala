@@ -20,7 +20,6 @@ object SnippetController {
 class SnippetController extends Controller {
 
   def list() = Action.async { implicit rs =>
-    val sql = """select * from snippets"""
     val snippetList = List(Snippet("first snippet", "first snippet detail"), Snippet("second snippet", "second snippet detail"), Snippet("third snippet", "third snippet detail"))
     Future {
       Ok(Json.toJson(ResultList(1, snippetList)))

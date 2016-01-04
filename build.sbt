@@ -13,7 +13,8 @@ libraryDependencies ++= Seq(
   specs2 % Test,
   "com.h2database" % "h2" % "1.4.177",
   "com.typesafe.slick" %% "slick" % "3.1.0",
-  "com.typesafe.slick" %% "slick-codegen" % "3.1.0"
+  "com.typesafe.slick" %% "slick-codegen" % "3.1.0",
+  "org.flywaydb" %% "flyway-play" % "2.2.1"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
