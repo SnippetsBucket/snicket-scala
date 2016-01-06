@@ -8,3 +8,7 @@ target
 /RUNNING_PID
 
 db/*.db
+
+node_modules
+.DS_Store
+.sass-cache
