@@ -9,6 +9,15 @@ class Application extends Controller {
     Ok(views.html.index("Your new application is ready."))
   }
 
+  def addIndexAt(path: String, file: String) = {
+    controllers.Assets.at(path, file + "/index.html")
+  }
+
+  def at(path: String, file: String) = {
+    val asset = controllers.Assets.at(path, file)
+    asset
+  }
+
   def codegen = Action {
     val slickDriver = "slick.driver.H2Driver"
     val jdbcDriver = "org.h2.Driver"
