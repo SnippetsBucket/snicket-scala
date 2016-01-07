@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./activator run -jvm-debug 9999",
+    "start": "gulp build && ./activator run -jvm-debug 9999",
     "dev": "gulp default"
   },
   "repository": {
