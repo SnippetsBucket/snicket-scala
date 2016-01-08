@@ -21,3 +21,7 @@ export const browserifyConfig = {
   }],
   extensions: ['.jsx']
 };
+
+export const cssModulesifyConfig = {
+  output: './public/css/app.css'
+};

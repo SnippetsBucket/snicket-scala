@@ -6,16 +6,18 @@
    See browserifyConfig.bundleConfigs in gulp/config.js
 */
 import gulp from 'gulp';
+import fs from 'fs';
 import browserify from 'browserify';
 import watchify from 'watchify';
 import source from 'vinyl-source-stream';
 import babelify from 'babelify';
-import { browserifyConfig as config } from '../config';
+import cssModulesify from 'css-modulesify';
+import { browserifyConfig, cssModulesifyConfig } from '../config';
 import handleErrors from '../util/handleErrors';
 import bundleLogger from '../util/bundleLogger';
 
 gulp.task('browserify', callback => {
-  let bundleQueue = config.bundleConfigs.length;
+  let bundleQueue = browserifyConfig.bundleConfigs.length;
 
   const browserifyThis = bundleConfig => {
 
@@ -25,9 +27,9 @@ gulp.task('browserify', callback => {
       // Specify the entry point of app
       entries: bundleConfig.entries,
       // Add file extentions to make optional in requires
-      extensions: config.extensions,
+      extensions: browserifyConfig.extensions,
       // Enable source maps
-      debug: config.debug
+      debug: browserifyConfig.debug
     });
 
     const bundle = () => {
@@ -48,6 +50,7 @@ gulp.task('browserify', callback => {
     };
 
     bundler.transform(babelify.configure());
+    bundler.plugin(cssModulesify, cssModulesifyConfig);
 
     if (global.isWatching) {
       // Wrap with watchify and rebundle on changes
@@ -72,5 +75,5 @@ gulp.task('browserify', callback => {
   };
 
   // Start bundling with Browserify for each bundleConfig specified
-  config.bundleConfigs.forEach(browserifyThis);
+  browserifyConfig.bundleConfigs.forEach(browserifyThis);
 });

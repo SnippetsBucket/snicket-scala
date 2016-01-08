@@ -14,3 +14,4 @@ node_modules
 .sass-cache
 
 public/js/bundle
+public/css/app.css
