@@ -3,8 +3,8 @@ Snicket is OSS product of provide free.
 
 Please consider the contribution by all means.
 
-## about Issue, PullRequest
-Please you search for existing, related Issue and pullrequests.
+## About Issue/PullRequest
+Please you search for existing, related Issues/pullrequests.
 
 ## How to build development enviroment of Snicket
 
@@ -15,7 +15,7 @@ The following middleware is necessary for build application.
 - node >= 5.3.0
 - scala
 
-#### build frontend
+#### Build frontend
 To install each module of node.
 
 Module required for the processing written in the `package.json`.
