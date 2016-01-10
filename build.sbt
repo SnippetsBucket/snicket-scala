@@ -14,6 +14,7 @@ libraryDependencies ++= Seq(
   "com.h2database" % "h2" % "1.4.177",
   "com.typesafe.slick" %% "slick" % "3.1.0",
   "com.typesafe.slick" %% "slick-codegen" % "3.1.0",
+  "com.typesafe.play" %% "play-slick" % "1.1.1",
   "org.flywaydb" %% "flyway-play" % "2.2.1"
 )
 
