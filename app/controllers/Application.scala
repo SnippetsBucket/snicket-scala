@@ -21,7 +21,7 @@ class Application extends Controller {
   def codegen = Action {
     val slickDriver = "slick.driver.H2Driver"
     val jdbcDriver = "org.h2.Driver"
-    val url = "jdbc:h2:file:./db/data;MODE=MYSQL"
+    val url = "jdbc:h2:file:./db/data;MVCC=true"
     val outputDir = "app"
     val pkg = "models"
     val user = "sa"

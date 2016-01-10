@@ -1,7 +1,7 @@
 CREATE TABLE snippets (
   snippet_id IDENTITY NOT NULL AUTO_INCREMENT,
-  snippet_title varchar(500)  NOT NULL,
-  snippet_text text  NOT NULL,
+  snippet_title varchar NOT NULL,
+  snippet_text varchar NOT NULL,
   user_id int(11) NOT NULL,
   created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
   updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
