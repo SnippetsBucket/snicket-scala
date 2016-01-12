@@ -70,4 +70,10 @@ class SnippetController @Inject()(val dbConfigProvider: DatabaseConfigProvider, 
     }
   }
 
+  def remove(id: Long) = Action.async { implicit rs =>
+    db.run(Snippets.filter(r => r.snippetId === id).delete).map { _ =>
+      Ok(Json.obj("code" -> 0, "result" -> "success"))
+    }
+  }
+
 }
