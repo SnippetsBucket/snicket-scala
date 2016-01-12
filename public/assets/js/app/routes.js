@@ -1,10 +1,10 @@
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route } from 'react-router';
 
 import Layout from './containers/layout/';
 import ManageSnippet from './containers/ManageSnippet/';
 
 export default (
-  <Router history={browserHistory}>
+  <Router>
     <Route path="/" component={Layout}>
       <Route path="/snippet/create/" component={ManageSnippet} />
       <Route path="/*" />

@@ -22,6 +22,7 @@ class ManageSnippet extends Component {
           <input type="text" placeholder="title"/>
           <p>本文</p>
           <input type="text" placeholder="content"/>
+          <input type="submit" value="送信"/>
         </form>
       </div>
     );
