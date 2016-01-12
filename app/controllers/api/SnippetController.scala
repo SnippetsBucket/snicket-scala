@@ -17,6 +17,9 @@ object SnippetController {
   case class SnippetForm(title: String, text: String)
   implicit val snippetFormRead = Json.reads[SnippetForm]
 
+  case class SnippetUpdateForm(id: Long, title: String, text: String)
+  implicit val snippetUpdateFormRead = Json.reads[SnippetUpdateForm]
+
   case class Snippet(title: String, text: String)
   implicit val snippetWrites = Json.writes[Snippet]
 
@@ -44,6 +47,20 @@ class SnippetController @Inject()(val dbConfigProvider: DatabaseConfigProvider, 
       val nowTime = new java.sql.Timestamp(System.currentTimeMillis())
       val snippet = SnippetsRow(0, form.title, form.text, 1, nowTime, nowTime)
       db.run(Snippets += snippet).map { _ =>
+        Ok(Json.obj("code" -> 0, "result" -> "success"))
+      }
+    }.recoverTotal { e =>
+      Future {
+        BadRequest(Json.obj("code" -> 1, "result" ->"failure", "error" -> JsError.toJson(e)))
+      }
+    }
+  }
+
+  def update = Action.async(parse.json) { implicit rs =>
+    rs.body.validate[SnippetUpdateForm].map { form =>
+      val nowTime = new java.sql.Timestamp(System.currentTimeMillis())
+      val snippet = SnippetsRow(form.id, form.title, form.text, 1, nowTime, nowTime)
+      db.run(Snippets.filter(r => r.snippetId === snippet.snippetId).update(snippet)).map { _ =>
         Ok(Json.obj("code" -> 0, "result" -> "success"))
       }
     }.recoverTotal { e =>
