@@ -21,6 +21,13 @@ function receiveError(json) {
   };
 }
 
+function receiveSuccess(json) {
+  return {
+    type: types.RECEIVE_SUCCESS,
+    data: json
+  };
+}
+
 export function fetchData(url) {
   return dispatch => {
     dispatch(requestData());
@@ -36,6 +43,36 @@ export function fetchData(url) {
     })
     .catch(res => {
       dispatch(receiveError(res.data));
+      //dispatch(pushState(null, '/error'));
+    });
+  };
+};
+
+
+function addSnippet(json) {
+  return {
+    type: types.POST_DATA,
+    data: json
+  };
+}
+
+export function postData(url, snippet) {
+  return dispatch => {
+    dispatch(addSnippet(snippet));
+
+    return axios({
+      url: url,
+      timeout: 20000,
+      method: 'post',
+      data: snippet
+    })
+    .then(res => {
+      dispatch(receiveSuccess(res.data));
+      console.log('success');
+    })
+    .catch(res => {
+      dispatch(receiveError(res.data));
+      console.log('error');
       //dispatch(pushState(null, '/error'));
     });
   };

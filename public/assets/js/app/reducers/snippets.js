@@ -11,7 +11,6 @@ function snippets(state = initialState, action = null) {
     case types.RECEIVE_ERROR:
       return Object.assign({}, state, {
         isFetching: false,
-        items: action.data.list,
         error: true
       });
 
@@ -22,10 +21,20 @@ function snippets(state = initialState, action = null) {
         error: false
       });
 
+    case types.RECEIVE_SUCCESS:
+      return Object.assign({}, state, {
+        error: false
+      });
+
     case types.REQ_DATA:
       return Object.assign({}, state, {
         isFetching: true,
         error: false
+      });
+
+    case types.POST_DATA:
+      return Object.assign({}, state, {
+        items: [action.snippet, ...state.items]
       });
 
     default:

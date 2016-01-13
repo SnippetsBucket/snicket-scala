@@ -1,3 +1,6 @@
 export const REQUEST_DATA = 'REQUEST_DATA';
 export const RECIEVE_DATA = 'RECIEVE_DATA';
 export const RECEIVE_ERROR = 'RECEIVE_ERROR';
+export const RECEIVE_SUCCESS = 'RECEIVE_SUCCESS';
+
+export const POST_DATA = 'POST_DATA';

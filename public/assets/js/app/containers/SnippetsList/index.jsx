@@ -5,9 +5,6 @@ import { Link } from 'react-router';
 
 import { fetchData } from '../../actions';
 
-function loadData() {
-  //fetchData('/api/snippet/list');
-};
 
 class SnippetsList extends Component {
   constructor(props) {
