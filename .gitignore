@@ -15,3 +15,4 @@ node_modules
 
 public/assets/js/bundle
 public/assets/css/app.css
+npm-debug.log
