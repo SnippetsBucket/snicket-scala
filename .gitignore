@@ -13,4 +13,6 @@ node_modules
 .DS_Store
 .sass-cache
 
-public/js/bundle
+public/assets/js/bundle
+public/assets/css/app.css
+npm-debug.log

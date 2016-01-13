@@ -33,6 +33,7 @@
     "browser-sync": "^2.11.0",
     "browserify": "^12.0.1",
     "browserify-shim": "^3.8.11",
+    "css-modulesify": "^0.16.1",
     "eslint": "^1.10.3",
     "gulp": "^3.9.0",
     "gulp-notify": "^2.2.0",
@@ -43,12 +44,17 @@
     "watchify": "^3.6.1"
   },
   "dependencies": {
-    "history": "^1.17.0",
+    "axios": "^0.8.1",
+    "history": "^1.15.0",
     "material-ui": "^0.14.1",
-    "react": "^0.14.5",
-    "react-dom": "^0.14.5",
-    "react-router": "^1.0.3",
-    "react-tap-event-plugin": "^0.2.1"
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-redux": "^4.0.0",
+    "react-router": "^1.0.1",
+    "react-tap-event-plugin": "^0.2.1",
+    "redux": "^3.0.4",
+    "redux-router": "^1.0.0-beta5",
+    "redux-thunk": "^1.0.0"
   },
   "browserify-shim": {
     "react": "global:React"

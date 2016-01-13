@@ -5,7 +5,7 @@ export const browserSyncConfig = {
   port: 35729,
   files: [
     './public/index.html',
-    './public/js/bundle/app.js'
+    './public/assets/js/bundle/app.js'
   ]
 };
 
@@ -15,9 +15,13 @@ export const browserifyConfig = {
   // A separate bundle will be generated for each
   // bundle config in the list below
   bundleConfigs: [{
-    entries: './public/js/app/app.js',
-    dest: './public/js/bundle/',
+    entries: './public/assets/js/app/app.js',
+    dest: './public/assets/js/bundle/',
     outputName: 'app.js'
   }],
   extensions: ['.jsx']
+};
+
+export const cssModulesifyConfig = {
+  output: './public/assets/css/app.css'
 };
