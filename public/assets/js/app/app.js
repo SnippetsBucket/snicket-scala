@@ -1,7 +1,10 @@
 import { render } from 'react-dom';
-import routes from './routes';
+import Root from './containers/Root';
+import configureStore from './store/configureStore';
+
+const store = configureStore();
 
 render(
-  routes,
+  <Root store={store} />,
   document.getElementById('app')
 );

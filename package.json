@@ -44,12 +44,16 @@
     "watchify": "^3.6.1"
   },
   "dependencies": {
-    "history": "^2.0.0-rc1",
+    "history": "^1.15.0",
     "material-ui": "^0.14.1",
-    "react": "^0.14.5",
-    "react-dom": "^0.14.5",
-    "react-router": "2.0.0-rc4",
-    "react-tap-event-plugin": "^0.2.1"
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-redux": "^4.0.0",
+    "react-router": "^1.0.1",
+    "react-tap-event-plugin": "^0.2.1",
+    "redux": "^3.0.4",
+    "redux-router": "^1.0.0-beta5",
+    "redux-thunk": "^1.0.0"
   },
   "browserify-shim": {
     "react": "global:React"

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-import Header from '../../components/header/';
+import Header from '../../components/layout/header/';
 
 class App extends Component {
   constructor(props) {
@@ -9,16 +9,13 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props);
-
     return (
       <div>
         <Header />
 
-        <Link to="/hoge/">to hoge</Link>
-
-        <p>piyo</p>
-        {this.props.children}
+        <div>
+          {this.props.children}
+        </div>
       </div>
     );
   }

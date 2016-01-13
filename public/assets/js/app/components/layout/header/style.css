@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+    padding: 8px 30px;
+    background-color: #f8f8f8;
+}
+.main {
+    display: flex;
+}
+.info {
+    display: flex;
+}
