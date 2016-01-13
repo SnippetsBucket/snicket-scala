@@ -1,0 +1,42 @@
+import axios from 'axios';
+//import { pushState } from 'redux-router';
+
+import * as types from '../constants/ActionTypes';
+
+function requestData() {
+  return { type: types.REQUEST_DATA };
+}
+
+function receiveData(json) {
+  return {
+    type: types.RECIEVE_DATA,
+    data: json
+  };
+}
+
+function receiveError(json) {
+  return {
+    type: types.RECEIVE_ERROR,
+    data: json
+  };
+}
+
+export function fetchData(url) {
+  return dispatch => {
+    dispatch(requestData());
+
+    return axios({
+      url: url,
+      timeout: 20000,
+      method: 'get',
+      responseType: 'json'
+    })
+    .then(res => {
+      dispatch(receiveData(res.data));
+    })
+    .catch(res => {
+      dispatch(receiveError(res.data));
+      //dispatch(pushState(null, '/error'));
+    });
+  };
+};
