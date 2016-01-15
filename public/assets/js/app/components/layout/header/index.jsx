@@ -34,7 +34,8 @@ const menuStyle = {
   },
 };
 
-
+// header: #22354c
+// footer: #e6edf4
 const Header = () => (
   <AppBar
     style={style}
