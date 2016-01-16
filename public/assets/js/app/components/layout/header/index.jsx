@@ -1,18 +1,5 @@
-//import AppBar from 'material-ui/lib/app-bar';
-//import IconButton from 'material-ui/lib/icon-button';
-//import IconMenu from 'material-ui/lib/menus/icon-menu';
-//import Menu from 'material-ui/lib/menus/menu';
-//import MenuItem from 'material-ui/lib/menus/menu-item';
-//import Divider from 'material-ui/lib/divider';
-//import Colors from 'material-ui/lib/styles/colors';
-////Icons
-//import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
-//import RemoveRedEye from 'material-ui/lib/svg-icons/image/remove-red-eye';
-//import PersonAdd from 'material-ui/lib/svg-icons/social/person-add';
-//import ContentCopy from 'material-ui/lib/svg-icons/content/content-copy';
-//import ContentLink from 'material-ui/lib/svg-icons/content/link';
-//import Delete from 'material-ui/lib/svg-icons/action/delete';
-//import Download from 'material-ui/lib/svg-icons/file/file-download';
+import Tabs from 'material-ui/lib/tabs/tabs';
+import Tab from 'material-ui/lib/tabs/tab';
 //bootstrap
 import Navbar from 'react-bootstrap/lib/Navbar';
 import NavbarHeader from 'react-bootstrap/lib/NavbarHeader';
@@ -20,9 +7,14 @@ import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
 import NavDropdown from 'react-bootstrap/lib/NavDropdown';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
+import Input from 'react-bootstrap/lib/Input';
+
+import FormStyles from '../../FormStyles';
 
 const style = {
-  backgroundColor: '#22354c'
+  backgroundColor: '#fff',
+  //color: '#c4cdda',
+  borderRadius: '0'
 };
 const iconStyles = {
   marginRight: 24,
@@ -44,23 +36,30 @@ const menuStyle = {
 // header: #22354c
 // footer: #e6edf4
 const Header = () => (
-    <Navbar>
+    <Navbar style={style}>
       <Navbar.Header>
         <Navbar.Brand>
-          <a href="#">Snicket</a>
+          <a href="/">Snicket</a>
         </Navbar.Brand>
+        <Navbar.Toggle />
       </Navbar.Header>
-      <Nav>
-        <NavItem href="#">Link</NavItem>
-        <NavItem href="#">Link</NavItem>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <MenuItem >Action</MenuItem>
-          <MenuItem >Another action</MenuItem>
-          <MenuItem >Something else here</MenuItem>
-          <MenuItem divider />
-          <MenuItem >Separated link</MenuItem>
-        </NavDropdown>
-      </Nav>
+      <Navbar.Collapse>
+        <Navbar.Form pullLeft>
+          <Input type="search" style={FormStyles.common} placeholder="Search"/>
+          {' '}
+        </Navbar.Form>
+        <Nav pullRight>
+          <NavDropdown eventKey={3} title="Post" id="basic-nav-dropdown">
+            <MenuItem eventKey={3.1} href="snippet/create/">New Post</MenuItem>
+          </NavDropdown>
+          <NavDropdown eventKey={4} title="UserName" id="basic-nav-dropdown">
+            <MenuItem eventKey={4.1}>My Profile</MenuItem>
+            <MenuItem divider />
+            <MenuItem eventKey={4.2}>Settings</MenuItem>
+            <MenuItem eventKey={4.3}>Logout</MenuItem>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
 );
 

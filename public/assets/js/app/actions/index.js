@@ -68,7 +68,13 @@ export function postData(url, snippet) {
     })
     .then(res => {
       dispatch(receiveSuccess(res.data));
-      console.log('success');
+      console.log('post success');
+      console.log(res.data.code);
+      // FIXME: don't redirect to root
+      if (res.data.code == 0) {
+        console.log('0だったよ');
+        this.context.router.replaceRoutes('/');
+      }
     })
     .catch(res => {
       dispatch(receiveError(res.data));
