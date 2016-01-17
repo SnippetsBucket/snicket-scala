@@ -20,7 +20,7 @@ object SnippetController {
   case class SnippetUpdateForm(id: Long, title: String, text: String)
   implicit val snippetUpdateFormRead = Json.reads[SnippetUpdateForm]
 
-  case class Snippet(title: String, text: String)
+  case class Snippet(id: Long, title: String, text: String, userId: Int, createdAt: java.sql.Timestamp, updatedAt: java.sql.Timestamp)
   implicit val snippetWrites = Json.writes[Snippet]
 
   case class ResultList(code: Int, list: Seq[Snippet])
@@ -36,7 +36,7 @@ class SnippetController @Inject()(val dbConfigProvider: DatabaseConfigProvider, 
   def list = Action.async { implicit rs =>
     db.run(Snippets.result).map { snippets =>
       val snippetList = snippets.map { snippet =>
-        Snippet(snippet.snippetTitle, snippet.snippetText)
+        Snippet(snippet.snippetId, snippet.snippetTitle, snippet.snippetText, snippet.userId, snippet.createdAt, snippet.updatedAt)
       }
       Ok(Json.toJson(ResultList(0, snippetList)))
     }
