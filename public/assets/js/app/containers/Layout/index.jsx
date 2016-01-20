@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
 import Header from '../../components/layout/header/';
-import NavTab from '../../components/layout/Tab';
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +11,6 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <NavTab />
           <div>
               {this.props.children}
           </div>

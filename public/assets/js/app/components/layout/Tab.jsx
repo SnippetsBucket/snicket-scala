@@ -1,38 +1,51 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 import Slider from 'material-ui/lib/slider';
 
-const styles = {
-  navStyle: {
-    backgroundColor: '#fff',
-    color: '#22354c',
-    fontWeight: 'bold',
-  },
-};
 
-function handleActive(tab) {
+export default class NavTab extends Component {
+
+  //static propTypes = {
+  //  items: PropTypes.object.isRequired
+  //};
+
+  constructor(props) {
+    super(props);
+    this.styles = {
+      navStyle: {
+        backgroundColor: '#fff',
+        color: '#22354c',
+        fontWeight: 'bold',
+      },
+    };
+  }
+
+  handleActive(tab) {
   //alert(`A tab with this route property ${tab.props.route} was activated.`);
+  }
+
+  render() {
+    //const items = this.props.items;
+    return (
+      <Tabs>
+        <Tab
+          style={this.styles.navStyle}
+          label="New Posts"
+          route="/"
+          onActive={this.handleActive} />
+        <Tab
+          style={this.styles.navStyle}
+          label="Starts"
+          route="snippet/create/"
+          onActive={this.handleActive} />
+        <Tab
+          style={this.styles.navStyle}
+          label="My Posts"
+          route="snippet/create/"
+          onActive={this.handleActive} />
+      </Tabs>
+    );
+  }
+
 }
-
-const NavTab = () => (
-  <Tabs>
-    <Tab
-      style={styles.navStyle}
-      label="New Posts"
-      route="/"
-      onActive={handleActive} />
-    <Tab
-      style={styles.navStyle}
-      label="Starts"
-      route="snippet/create/"
-      onActive={handleActive} />
-    <Tab
-      style={styles.navStyle}
-      label="My Posts"
-      route="snippet/create/"
-      onActive={handleActive} />
-  </Tabs>
-);
-
-export default NavTab;

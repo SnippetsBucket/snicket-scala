@@ -10,6 +10,7 @@ import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 
 import { fetchData } from '../../actions';
 //import List from '../../components/layout/List';
+import NavTab from '../../components/layout/Tab';
 
 class SnippetsList extends Component {
   constructor(props) {
@@ -46,7 +47,10 @@ class SnippetsList extends Component {
 
   render() {
     return (
-      <div>{this.props.snippets.isFetching ? '取得中' : this.renderSnippets()}</div>
+      <div>
+        <NavTab />
+        <div>{this.props.snippets.isFetching ? 'Fetching...' : this.renderSnippets()}</div>
+      </div>
     );
   }
 }
