@@ -33,7 +33,7 @@ export function fetchData(url) {
     dispatch(requestData());
 
     return axios({
-      url: url,
+      url,
       timeout: 20000,
       method: 'get',
       responseType: 'json'
@@ -46,7 +46,7 @@ export function fetchData(url) {
       //dispatch(pushState(null, '/error'));
     });
   };
-};
+}
 
 
 function addSnippet(json) {
@@ -61,7 +61,7 @@ export function postData(url, snippet) {
     dispatch(addSnippet(snippet));
 
     return axios({
-      url: url,
+      url,
       timeout: 20000,
       method: 'post',
       data: snippet
@@ -71,9 +71,9 @@ export function postData(url, snippet) {
       console.log('post success');
       console.log(res.data.code);
       // FIXME: don't redirect to root
-      if (res.data.code == 0) {
+      if (res.data.code === 0) {
         console.log('0だったよ');
-        this.context.router.replaceRoutes('/');
+        //context.router.replaceRoutes('/');
       }
     })
     .catch(res => {
@@ -82,4 +82,4 @@ export function postData(url, snippet) {
       //dispatch(pushState(null, '/error'));
     });
   };
-};
+}
