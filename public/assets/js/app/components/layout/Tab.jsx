@@ -28,23 +28,21 @@ export default class NavTab extends Component {
   render() {
     //const items = this.props.items;
     return (
-      <Tabs>
-        <Tab
-          style={this.styles.navStyle}
-          label="New Posts"
-          route="/"
-          onActive={this.handleActive} />
-        <Tab
-          style={this.styles.navStyle}
-          label="Starts"
-          route="snippet/create/"
-          onActive={this.handleActive} />
-        <Tab
-          style={this.styles.navStyle}
-          label="My Posts"
-          route="snippet/create/"
-          onActive={this.handleActive} />
-      </Tabs>
+      <div className="tabbable-panel">
+        <div className="container tabbable-line">
+          <ul className="nav nav-tabs ">
+            <li className="active">
+              <a href="/" data-toggle="tab">New Posts</a>
+            </li>
+            <li>
+              <a href="/snippet/create/" data-toggle="tab">Stars</a>
+            </li>
+            <li>
+              <a href="/snippet/create/" data-toggle="tab">My Posts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     );
   }
 

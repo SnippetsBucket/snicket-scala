@@ -12,7 +12,7 @@ import Input from 'react-bootstrap/lib/Input';
 import FormStyles from '../../FormStyles';
 
 const style = {
-  backgroundColor: '#fff',
+  backgroundColor: '#22354c',
   //color: '#c4cdda',
   borderRadius: '0'
 };
@@ -36,7 +36,7 @@ const menuStyle = {
 // header: #22354c
 // footer: #e6edf4
 const Header = () => (
-    <Navbar style={style}>
+    <Navbar inverse style={style}>
       <Navbar.Header>
         <Navbar.Brand>
           <a href="/">Snicket</a>
