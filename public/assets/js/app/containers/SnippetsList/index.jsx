@@ -21,10 +21,6 @@ class SnippetsList extends Component {
     this.props.fetchData('/api/snippet/list');
   }
 
-  toSnippet() {
-    alert('hoge');
-  }
-
   renderSnippets() {
     const items = this.props.snippets.items;
 

@@ -20,6 +20,7 @@ Licensed under MIT
 .tabbable-line > .nav-tabs > li > a {
     border: 0;
     margin-right: 0;
+    font-size: 13px;
     color: #737373;
 }
 .tabbable-line > .nav-tabs > li > a > i {
@@ -31,7 +32,7 @@ Licensed under MIT
 .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a, .tabbable-line > .nav-tabs > li.active:hover > a{
     border: 0;
     background: none !important;
-    color: #333333;
+    color: #f3565d;
 }
 .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
     color: #a6a6a6;
@@ -45,7 +46,7 @@ Licensed under MIT
 }
 .tabbable-line > .nav-tabs > li.active > a {
     border: 0;
-    color: #333333;
+    color: #f3565d;
 }
 .tabbable-line > .nav-tabs > li.active > a > i {
     color: #404040;
