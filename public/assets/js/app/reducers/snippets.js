@@ -26,7 +26,7 @@ function snippets(state = initialState, action = null) {
         error: false
       });
 
-    case types.REQ_DATA:
+    case types.REQUEST_DATA:
       return Object.assign({}, state, {
         isFetching: true,
         error: false
