@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 
 import { postData } from '../../actions';
+import Header from '../../components/layout/header/';
 import FormStyles from '../../components/FormStyles';
 
 class ManageSnippet extends Component {
@@ -37,28 +38,31 @@ class ManageSnippet extends Component {
 
   render() {
     return (
-      <Grid fluid>
-        <Row className="show-grid">
-          <Col lg={12}>
-            <form onSubmit={this.handleSubmit}>
-              <div className="clearfix">
-                <Input name="title" type="text" style={FormStyles.common} bsSize="large" placeholder="Title" />
-                <div>
-                  <Col lg={6} style={this.styles.textAreaCol}>
-                    <Input name="text" type="textarea" style={this.styles.textAreaStyle} placeholder="Input Markdown..." />
-                  </Col>
-                  <Col lg={6} style={this.styles.textAreaCol}>
-                    <div>
+      <div>
+        <Header />
+        <Grid fluid>
+          <Row className="show-grid">
+            <Col lg={12}>
+              <form onSubmit={this.handleSubmit}>
+                <div className="clearfix">
+                  <Input name="title" type="text" style={FormStyles.common} bsSize="large" placeholder="Title" />
+                  <div>
+                    <Col lg={6} style={this.styles.textAreaCol}>
+                      <Input name="text" type="textarea" style={this.styles.textAreaStyle} placeholder="Input Markdown..." />
+                    </Col>
+                    <Col lg={6} style={this.styles.textAreaCol}>
+                      <div>
 
-                    </div>
-                  </Col>
+                      </div>
+                    </Col>
+                  </div>
                 </div>
-              </div>
-              <ButtonInput className="pull-right" bsStyle="success" type="submit" value="Post snippet" />
-            </form>
-          </Col>
-        </Row>
-      </Grid>
+                <ButtonInput className="pull-right" bsStyle="success" type="submit" value="Post snippet" />
+              </form>
+            </Col>
+          </Row>
+        </Grid>
+      </div>
     );
   }
 }

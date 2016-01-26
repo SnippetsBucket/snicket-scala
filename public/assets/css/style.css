@@ -62,6 +62,32 @@ Licensed under MIT
     padding-bottom: 0;
 }
 
+/* util */
+.u-btn-success {
+    background-color: #F37D82 !important;
+    border-color: #f3817e !important;
+    color: #fff !important;
+}
+
+/* Global */
 .navbar {
     margin-bottom: 0 !important;
 }
+
+/* Login */
+/*body {*/
+    /*padding-top:100px;*/
+    /*background-color: #22354c;*/
+/*}*/
+
+.loggin-logo {
+    color: #fff;
+    font-size: 4rem;
+}
+
+.loggin-header {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
