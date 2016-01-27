@@ -23,7 +23,7 @@ class Login extends Component {
         </div>
         <div className="row">
           <div className="col-md-4 col-md-offset-4">
-            <form accept-charset="UTF-8" role="form">
+            <form accept-charset="UTF-8" role="form" onSubmit={this.handleSubmit}>
               <fieldset>
                 <div className="form-group">
                   <TextField

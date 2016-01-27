@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-router';
+import { createHistory } from 'history';
+import { Route } from 'react-router';
 
 
 class App extends Component {
@@ -7,8 +10,11 @@ class App extends Component {
   }
 
   render() {
+    const isFullScreenPage = this.props.location.pathname === "/login" ? true : false;
+
     return (
-      <div>
+      <div
+        className={isFullScreenPage ? "isFullScreenPage" : ""}>
           {this.props.children}
       </div>
     );

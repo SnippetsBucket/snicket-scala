@@ -12,7 +12,7 @@ import Input from 'react-bootstrap/lib/Input';
 import FormStyles from '../../FormStyles';
 
 const style = {
-  backgroundColor: '#22354c',
+  backgroundColor: '#1E2835',
   //color: '#c4cdda',
   borderRadius: '0'
 };

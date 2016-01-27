@@ -70,15 +70,18 @@ Licensed under MIT
 }
 
 /* Global */
+body, #app {
+    height: 100%;
+}
+.isFullScreenPage {
+    background-color: #1E2835;
+    padding-top:100px;
+    height: 100%;
+}
+
 .navbar {
     margin-bottom: 0 !important;
 }
-
-/* Login */
-/*body {*/
-    /*padding-top:100px;*/
-    /*background-color: #22354c;*/
-/*}*/
 
 .loggin-logo {
     color: #fff;
