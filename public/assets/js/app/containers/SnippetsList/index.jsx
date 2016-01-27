@@ -25,7 +25,7 @@ class SnippetsList extends Component {
   renderSnippets() {
     const items = this.props.snippets.items;
 
-    if (items) {
+    if (Object.keys(items).length) {
       return (
         <Grid>
           <Row className="show-grid">

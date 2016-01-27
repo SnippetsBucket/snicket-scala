@@ -7,7 +7,8 @@ import rootReducer from '../reducers/';
 
 const finalCreateStore = compose(
   applyMiddleware(thunk),
-  reduxReactRouter({ routes, createHistory })
+  reduxReactRouter({ routes, createHistory }),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore);
 
 export default function configureStore(initialState) {
