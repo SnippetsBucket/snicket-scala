@@ -7,13 +7,15 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import ListGroup from 'react-bootstrap/lib/ListGroup';
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
+import CircularProgress from 'material-ui/lib/circular-progress';
 
 import { fetchData } from '../../actions';
 //import List from '../../components/layout/List';
 import Header from '../../components/layout/header/';
 import NavTab from '../../components/layout/Tab';
+import SnippetList from '../../components/SnippetList';
 
-class SnippetsList extends Component {
+class SnippetsListBox extends Component {
   constructor(props) {
     super(props);
   }
@@ -31,9 +33,7 @@ class SnippetsList extends Component {
           <Row className="show-grid">
             <Col lg={8}>
               <div>
-              {items.map((item, i) =>
-                <a href={item.id}>{item.title}</a>
-              )}
+                <SnippetList snippetList={items} />
               </div>
             </Col>
           </Row>
@@ -47,13 +47,13 @@ class SnippetsList extends Component {
       <div>
         <Header />
         <NavTab />
-        <div>{this.props.snippets.isFetching ? 'Fetching...' : this.renderSnippets()}</div>
+        <div>{this.props.snippets.isFetching ? <CircularProgress mode="indeterminate" size={1.5}/> : this.renderSnippets()}</div>
       </div>
     );
   }
 }
 
-SnippetsList.propTypes = {
+SnippetsListBox.propTypes = {
   fetchData: PropTypes.func.isRequired,
   snippets: PropTypes.object.isRequired
 };
@@ -73,4 +73,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SnippetsList);
+)(SnippetsListBox);
