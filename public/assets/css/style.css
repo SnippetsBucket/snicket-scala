@@ -130,21 +130,24 @@ body, #app {
 }
 
 /* Home */
-.blue-knowledge-list {
+.snippet-list {
     padding: 0;
     margin: 10px 0;
 }
-.blue-knowledge-list > li {
+.snippet-list > li {
+    border-top: 1px #ccc solid;
+}
+
+.snippet-list > li:first-child {
+    border-top: none;
+}
+.snippet-list-item {
     display: table;
     padding: 10px 0;
     width: 100%;
-    border-top: 1px #ccc solid;
     list-style: none;
 }
-.blue-knowledge-list > li:first-child {
-    border-top: none;
-}
-.blue-knowledge-list-info {
+.snippet-list-info {
     display: table-cell;
     padding-left: 16px;
     width: 100%;
@@ -152,7 +155,7 @@ body, #app {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-.blue-knowledge-list-title {
+.snippet-list-title {
     display: block;
     font-size: 16px;
     font-weight: bold;
@@ -160,23 +163,23 @@ body, #app {
     /*line-height: 24px;*/
     text-decoration: none;
 }
-.blue-knowledge-list-title:hover,
-.blue-knowledge-list-title:visited {
+.snippet-list-title:hover,
+.snippet-list-title:visited {
     color: #685987;
 }
-.blue-knowledge-list-thumb {
+.snippet-list-thumb {
     display: table-cell;
     width: 40px;
     height: 40px;
 }
-.blue-knowledge-list-name {
+.snippet-list-name {
     float: right;
     margin: 0 0 0 12px;
     font-size: 13px;
     font-weight: bold;
     color: #555;
 }
-.blue-knowledge-list-date {
+.snippet-list-date {
     float: right;
     margin-bottom: 0;
     font-size: 13px;
