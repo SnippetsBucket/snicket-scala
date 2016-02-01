@@ -109,7 +109,7 @@ body, #app {
     height: 100%;
 }
 .isFullScreenPage {
-    background-color: #1E2835;
+    background-color: #29394E;
     padding-top:100px;
     height: 100%;
 }
@@ -159,7 +159,7 @@ body, #app {
     display: block;
     font-size: 16px;
     font-weight: bold;
-    color: #075025;
+    color: #00943D;
     /*line-height: 24px;*/
     text-decoration: none;
 }
@@ -172,12 +172,20 @@ body, #app {
     width: 40px;
     height: 40px;
 }
-.snippet-list-name {
+.snippet-list-authorInfo {
     float: right;
     margin: 0 0 0 12px;
     font-size: 13px;
     font-weight: bold;
     color: #555;
+}
+.snippet-list-authorInfo > .postby {
+    color: #525151;
+    padding-right: 10px;
+}
+.snippet-list-authorInfo > .date {
+    color: #A09898;
+    font-size: 11px;
 }
 .snippet-list-date {
     float: right;

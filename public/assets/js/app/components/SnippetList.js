@@ -4,7 +4,7 @@ import Snippet from './Snippet';
 
 export default class SnippetList extends Component {
 
-  
+
   render() {
     const snippetList = this.props.snippetList;
 
@@ -14,7 +14,7 @@ export default class SnippetList extends Component {
           <div className="comments-list">
             <ul className="snippet-list">
               {snippetList.map( item =>
-                <li>
+                <li key={item.id}>
                   <Snippet snippet={item} />
                 </li>
               )}
