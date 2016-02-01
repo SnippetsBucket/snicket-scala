@@ -47,6 +47,7 @@
     "axios": "^0.8.1",
     "history": "^1.15.0",
     "material-ui": "^0.14.1",
+    "moment": "^2.11.1",
     "react": "^0.14.3",
     "react-bootstrap": "^0.28.2",
     "react-dom": "^0.14.3",

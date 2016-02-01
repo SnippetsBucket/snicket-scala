@@ -69,12 +69,47 @@ Licensed under MIT
     color: #fff !important;
 }
 
+.u-tag {
+    background-color: #dfdfdf;
+    border-radius: 0px 2px 2px 0px;
+    color: #555;
+    display: inline-block;
+    font-size: 85%;
+    font-weight: 500;
+    line-height: 1.27273;
+    margin: 0 -5px 0 8px;
+    padding: 1px 7px;
+    position: relative;
+    text-decoration: none;
+}
+.u-tag:before {
+    border-top: 7px solid transparent;
+    border-right: 8px solid #dfdfdf;
+    border-bottom: 10px solid transparent;
+    content: "";
+    height: 0px;
+    position: absolute;
+    top: 0px;
+    left: -8px;
+    width: 0px;
+}
+.u-tag:after {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    content: "";
+    height: 4px;
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    width: 4px;
+}
+
 /* Global */
 body, #app {
     height: 100%;
 }
 .isFullScreenPage {
-    background-color: #1E2835;
+    background-color: #29394E;
     padding-top:100px;
     height: 100%;
 }
@@ -94,3 +129,68 @@ body, #app {
     font-weight: 400;
 }
 
+/* Home */
+.snippet-list {
+    padding: 0;
+    margin: 10px 0;
+}
+.snippet-list > li {
+    border-top: 1px #ccc solid;
+}
+
+.snippet-list > li:first-child {
+    border-top: none;
+}
+.snippet-list-item {
+    display: table;
+    padding: 10px 0;
+    width: 100%;
+    list-style: none;
+}
+.snippet-list-info {
+    display: table-cell;
+    padding-left: 16px;
+    width: 100%;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.snippet-list-title {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #00943D;
+    /*line-height: 24px;*/
+    text-decoration: none;
+}
+.snippet-list-title:hover,
+.snippet-list-title:visited {
+    color: #685987;
+}
+.snippet-list-thumb {
+    display: table-cell;
+    width: 40px;
+    height: 40px;
+}
+.snippet-list-authorInfo {
+    float: right;
+    margin: 0 0 0 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+}
+.snippet-list-authorInfo > .postby {
+    color: #525151;
+    padding-right: 10px;
+}
+.snippet-list-authorInfo > .date {
+    color: #A09898;
+    font-size: 11px;
+}
+.snippet-list-date {
+    float: right;
+    margin-bottom: 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+}

@@ -35,7 +35,7 @@ export default class NavTab extends Component {
               <a href="/" data-toggle="tab">New Posts</a>
             </li>
             <li>
-              <a href="/snippet/create/" data-toggle="tab">Stars</a>
+              <a href="/snippet/create/" data-toggle="tab">Stocks</a>
             </li>
             <li>
               <a href="/snippet/create/" data-toggle="tab">My Posts</a>
