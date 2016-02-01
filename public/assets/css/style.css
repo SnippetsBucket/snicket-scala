@@ -62,7 +62,10 @@ Licensed under MIT
     padding-bottom: 0;
 }
 
-/* util */
+/*-------------------------------------
+  Util
+-------------------------------------*/
+
 .u-btn-success {
     background-color: #F37D82 !important;
     border-color: #f3817e !important;
@@ -107,6 +110,7 @@ Licensed under MIT
 /* Global */
 body, #app {
     height: 100%;
+    color: #525151;
 }
 .isFullScreenPage {
     background-color: #29394E;
@@ -124,12 +128,15 @@ body, #app {
 }
 
 .loggin-header {
-    color: #fff;
+    color: #7EDCA5;
     font-size: 3rem;
     font-weight: 400;
 }
 
-/* Home */
+/*-------------------------------------
+  Home
+-------------------------------------*/
+
 .snippet-list {
     padding: 0;
     margin: 10px 0;
@@ -183,14 +190,122 @@ body, #app {
     color: #525151;
     padding-right: 10px;
 }
+.snippet-list-authorInfo > .postby > a {
+    padding-left: 5px;
+}
 .snippet-list-authorInfo > .date {
     color: #A09898;
     font-size: 11px;
 }
-.snippet-list-date {
-    float: right;
-    margin-bottom: 0;
-    font-size: 13px;
-    font-weight: bold;
-    color: #555;
+
+/*-------------------------------------
+  Snippet Detail
+-------------------------------------*/
+
+.snippet-user-thumb {
+    width: 23px;
+    height: 23px;
+    margin: 0 5px;
 }
+
+.snippet-user-name:hover {
+    color: #fff;
+}
+
+.item-header {
+    background-color: #E0EBF9;
+    margin-bottom: 30px;
+    padding: 30px 0;
+    /*height: 250px;*/
+}
+
+.snippet-formed-user {
+    padding: 15px 0;
+}
+
+.item-body {
+    padding-bottom: 50px;
+}
+.item-body > .container > pre {
+    border: none;
+    background-color: #f7f7f7;
+    padding: 16px;
+    border-radius: 3px;
+    overflow: auto;
+}
+.stock-list {
+    border-right: 1px solid #525151;
+}
+.stock-list-wrapper {
+    margin-left: 0;
+    font-size: 0;
+}
+.stock-list-wrapper i {
+    font-size: 14px;
+}
+.list-inline > li.stock-list,
+.list-inline > li.comment-list {
+    padding: 0;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.comment-count-text,
+.stock-count-text {
+    font-size: 14px;
+}
+.count-num {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.dropdown-form-button {
+    text-align: left;
+    -webkit-appearance: none;
+    border: none;
+    margin: 0;
+    background-color: inherit;
+    width: 100%;
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333333;
+    white-space: nowrap;
+}
+
+.dropdown-form-button:hover {
+    color: #262626;
+    background-color: #f5f5f5;
+}
+
+.item-comment {
+    margin: 15px 0 5px 0;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+/* right col*/
+
+.snippet-right__profile > img {
+    float: left;
+    margin-right: 5px;
+}
+
+.snippet-right__profile > a {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.snippet-right__snippetList > h6 {
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.snippet-right__snippetList > ul {
+    padding-left: 15px;
+    font-size: 12px;
+    /*color: #337ab7;*/
+}
+

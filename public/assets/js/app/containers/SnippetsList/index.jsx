@@ -43,11 +43,24 @@ class SnippetsListBox extends Component {
   }
 
   render() {
+    const style = {
+      loading: {
+        position: 'absolute',
+        margin: 27,
+        display: 'inline-block',
+        width: 50,
+        height: 50,
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)'
+      }
+    };
+
     return (
       <div>
         <Header />
         <NavTab />
-        <div>{this.props.snippets.isFetching ? <CircularProgress mode="indeterminate" size={1.5}/> : this.renderSnippets()}</div>
+        <div>{this.props.snippets.isFetching ? <CircularProgress style={style.loading} mode="indeterminate" size={1.5}/> : this.renderSnippets()}</div>
       </div>
     );
   }
