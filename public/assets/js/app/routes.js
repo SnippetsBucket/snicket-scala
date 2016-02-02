@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import Layout from './containers/Layout/';
 import SnippetsListBox from './containers/SnippetsList/';
 import ManageSnippet from './containers/ManageSnippet/';
-import SnippetDetail from './containers/ManageSnippet/detail';
+import SnippetDetail from './containers/ManageSnippet/SnippetDetailBox';
 import Login from './containers/Authentication/login';
 
 export default (

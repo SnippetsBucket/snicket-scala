@@ -106,6 +106,9 @@ Licensed under MIT
     left: -2px;
     width: 4px;
 }
+.fa {
+    padding: 0 5px;
+}
 
 /* Global */
 body, #app {
