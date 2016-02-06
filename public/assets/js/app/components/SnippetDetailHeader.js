@@ -54,7 +54,8 @@ export default class SnippetDetailHeader extends Component {
                     <span>
                         <a href="/users/{{ $snippet->users['id'] }}"><img src="{{$snippet->users['thumbnail']}}"
                                                                           className="snippet-user-thumb img-rounded"/></a>
-                        <a href="/users/{{ $snippet->users['id'] }}" className="snippet-user-name">UserName</a>1970/01/01 00:00:00
+                        <a href="/users/{{ $snippet->users['id'] }}" className="snippet-user-name">UserName</a>
+                        <span className="snippet-posted-date">1970/01/01 00:00:00</span>
                     </span>
               </div>
             </div>

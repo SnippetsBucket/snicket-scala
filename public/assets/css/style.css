@@ -226,6 +226,12 @@ body, #app {
     padding: 15px 0;
 }
 
+.snippet-formed-user .snippet-posted-date {
+    padding-left: 5px;
+}
+
+/* item */
+
 .item-body {
     padding-bottom: 50px;
 }
