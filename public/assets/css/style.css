@@ -318,6 +318,14 @@ body, #app {
     /*color: #337ab7;*/
 }
 
+.markdown-body > pre {
+    border: none;
+}
+
+code {
+    color: inherit;
+}
+
 /*-------------------------------------
   Snippet Create
 -------------------------------------*/

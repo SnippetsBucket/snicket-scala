@@ -7,7 +7,7 @@ export default class SnippetDetailPreview extends Component {
     const previewHtml = this.props.preview;
 
     return (
-      <div id="markdown-preview" dangerouslySetInnerHTML={{__html: previewHtml}}></div>
+      <div id="markdown-preview" className="markdown-body" dangerouslySetInnerHTML={{__html: previewHtml}}></div>
     );
   }
 }
