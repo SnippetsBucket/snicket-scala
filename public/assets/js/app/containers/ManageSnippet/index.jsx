@@ -7,14 +7,18 @@ import ButtonInput from 'react-bootstrap/lib/ButtonInput';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
+import MarkDownIt from 'markdown-it';
 
-import { postData } from '../../actions';
+import { postData, changePreview } from '../../actions';
 import Header from '../../components/layout/header/';
 import FormStyles from '../../components/FormStyles';
+import SnippetDetailPreview from '../../components/SnippetDetailPreview';
 
 class ManageSnippet extends Component {
   constructor(props) {
     super(props);
+    this.md = new MarkDownIt();
+    this.parseMD = this.parseMD.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.styles = {
       textAreaStyle: {
@@ -25,6 +29,11 @@ class ManageSnippet extends Component {
         padding: 0
       }
     };
+  }
+
+  parseMD() {
+    let html = document.getElementById('markdown-here').value;
+    this.props.changePreview(this.md.render(html))
   }
 
   handleSubmit(e) {
@@ -48,12 +57,10 @@ class ManageSnippet extends Component {
                   <Input name="title" type="text" style={FormStyles.common} bsSize="large" placeholder="Title" />
                   <div>
                     <Col lg={6} style={this.styles.textAreaCol}>
-                      <Input name="text" type="textarea" style={this.styles.textAreaStyle} placeholder="Input Markdown..." />
+                      <Input name="text" id="markdown-here" onChange={this.parseMD} type="textarea" style={this.styles.textAreaStyle} placeholder="Input Markdown..." />
                     </Col>
                     <Col lg={6} style={this.styles.textAreaCol}>
-                      <div>
-
-                      </div>
+                      <SnippetDetailPreview preview={this.props.snippets.previewHtml} />
                     </Col>
                   </div>
                 </div>
@@ -69,7 +76,8 @@ class ManageSnippet extends Component {
 
 ManageSnippet.propTypes = {
   postData: PropTypes.func.isRequired,
-  snippets: PropTypes.object.isRequired
+  snippets: PropTypes.object.isRequired,
+  changePreview: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -80,7 +88,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    postData
+    postData,
+    changePreview
   }, dispatch);
 }
 

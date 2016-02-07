@@ -4,3 +4,4 @@ export const RECEIVE_ERROR = 'RECEIVE_ERROR';
 export const RECEIVE_SUCCESS = 'RECEIVE_SUCCESS';
 
 export const POST_DATA = 'POST_DATA';
+export const CHANGE_PREVIEW = 'CHANGE_PREVIEW';

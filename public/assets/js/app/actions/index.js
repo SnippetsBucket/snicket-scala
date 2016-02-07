@@ -83,3 +83,10 @@ export function postData(url, snippet) {
     });
   };
 }
+
+export function changePreview(html){
+  return {
+    type: types.CHANGE_PREVIEW,
+    data: html
+  };
+}
