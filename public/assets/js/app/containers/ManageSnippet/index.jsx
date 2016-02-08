@@ -49,26 +49,43 @@ class ManageSnippet extends Component {
     return (
       <div>
         <Header />
-        <Grid fluid>
-          <Row className="show-grid">
-            <Col lg={12}>
-              <form onSubmit={this.handleSubmit}>
-                <div className="clearfix">
-                  <Input name="title" type="text" style={FormStyles.common} bsSize="large" placeholder="Title" />
-                  <div>
-                    <Col lg={6} style={this.styles.textAreaCol}>
-                      <Input name="text" id="markdown-here" onChange={this.parseMD} type="textarea" style={this.styles.textAreaStyle} placeholder="Input Markdown..." />
-                    </Col>
-                    <Col lg={6} style={this.styles.textAreaCol}>
+        <div class="snippet-form-wrapper">
+          <div class="container-fluid snippet-form-container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="snippet-form-title">
+                  <input type="text" name="title" class="form-control" value="Title" required />
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="snippet-body-wrapper clearfix">
+                  <div className="col-sm-6 snippet-body-left">
+                    <div className="snippet-form-tabs">
+                      <span className="snippet-form-tab" style={{display: 'inline-block', backgroundColor: '#fff'}}>本文</span>
+                      <button type="button" className="comment-form-tab" data-toggle="modal" data-target="#markdown-help"><i className="fa fa-question-circle"></i>書き方</button>
+                    </div>
+                    <div className="snippet-form-body-panel">
+                      <textarea className="form-control snippet-form-body" onChange={this.parseMD} id="markdown-here" name="body" placeholder="Input Markdown..." required></textarea>
+                    </div>
+                  </div>
+                  <div className="col-sm-6 snippet-body-right">
+                    <div className="snippet-form-tabs">
+                      <span className="snippet-form-tab" style={{display: 'block'}}>プレビュー</span>
+                    </div>
                       <SnippetDetailPreview preview={this.props.snippets.previewHtml} />
-                    </Col>
                   </div>
                 </div>
-                <ButtonInput className="pull-right" bsStyle="success" type="submit" value="Post snippet" />
-              </form>
-            </Col>
-          </Row>
-        </Grid>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-12">
+                <button className="btn u-btn pull-right"><i className="fa fa-pencil-square-o"></i>投稿する</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
