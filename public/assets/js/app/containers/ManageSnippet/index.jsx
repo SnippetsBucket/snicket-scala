@@ -49,12 +49,12 @@ class ManageSnippet extends Component {
     return (
       <div>
         <Header />
-        <div class="snippet-form-wrapper">
-          <div class="container-fluid snippet-form-container">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="snippet-form-title">
-                  <input type="text" name="title" class="form-control" value="Title" required />
+        <div className="snippet-form-wrapper">
+          <div className="container-fluid snippet-form-container">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="snippet-form-title">
+                  <input type="text" name="title" className="form-control" value="Title" required />
                 </div>
               </div>
             </div>

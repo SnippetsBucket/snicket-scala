@@ -330,15 +330,14 @@ code {
   Snippet Create
 -------------------------------------*/
 
-.show-grid {
-    padding-top: 15px;
-}
-
 .snippet-form-container {
     padding: 0 0;
 }
 .snippet-form-container .row {
     margin: 0 0;
+}
+.snippet-form-container .col-sm-12 {
+    padding: 0 5px;
 }
 .btn-post {
     margin-bottom: 20px;
