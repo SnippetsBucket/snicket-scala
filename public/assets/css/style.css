@@ -111,7 +111,7 @@ Licensed under MIT
 }
 
 /* Global */
-body, #app {
+html, body, #app {
     height: 100%;
     color: #525151;
 }
@@ -333,13 +333,26 @@ code {
 .snippet-form-container {
     height: 100vh;
     margin-top: -52px;
-    padding: 52px 0 0 0;
+    padding: 56px 0 0 0;
 }
 .snippet-form-container .row {
     margin: 0 0;
 }
 .snippet-form-container .col-sm-12 {
     padding: 0 5px;
+}
+.snippet-body-wrapper {
+    height: 100%;
+}
+.snippet-form-container .title{
+    height: 6%;
+}
+.snippet-form-container .content {
+    height: 89%;
+}
+.snippet-form-container .submit-btn-area {
+    height: 5%;
+    box-shadow: #ccc 0 0 4px 1px;
 }
 .btn-post {
     margin-bottom: 20px;
@@ -392,6 +405,7 @@ code {
     color: #999;
     border-radius: 4px 4px 0 0;
     background-color: #fafafa;
+    height: 5%;
 }
 .snippet-form-tab {
     padding: 10px 15px;
@@ -404,10 +418,7 @@ code {
     border-radius: 5px 0 0 0;
 }
 .snippet-form-body-panel {
-    height: 100vh;
-    margin-top: -153px;
-    padding-top: 153px;
-    padding-bottom: 34px;
+    height: 95%;
 }
 .snippet-form-body-panel textarea {
     height: 100%;
@@ -418,13 +429,14 @@ code {
 }
 .modal-content table thead {
     color: #999;
+    height: 100%;
 }
 .markdownHelp_body {
     overflow-y: auto;
     max-height: 450px;
 }
 .snippet-body-left {
-    /*min-height: 500px;*/
+    height: 99%;
     background-color: #fff;
     padding: 0;
     border-radius: 5px 0 0 5px;
@@ -433,7 +445,7 @@ code {
     border-bottom: 1px solid #ddd;
 }
 .snippet-body-right {
-    /*min-height: 500px;*/
+    height: 99%;
     background-color: #fff;
     padding: 0;
     border-radius: 0 5px 5px 0;
@@ -441,6 +453,7 @@ code {
 }
 .snippet-form-body-preview-panel {
     padding: 6px 12px;
+    height: 95%;
     /*max-height: 500px;*/
     overflow: auto;
     /*min-height: 500px;*/

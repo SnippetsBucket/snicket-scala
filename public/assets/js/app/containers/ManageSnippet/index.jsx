@@ -21,13 +21,7 @@ class ManageSnippet extends Component {
     this.parseMD = this.parseMD.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.styles = {
-      textAreaStyle: {
-        height: 500,
-        borderRadius: '2px 0 0 2px'
-      },
-      textAreaCol: {
-        padding: 0
-      }
+      height: '100%'
     };
   }
 
@@ -51,20 +45,20 @@ class ManageSnippet extends Component {
         <Header />
         <div className="snippet-form-wrapper">
           <div className="container-fluid snippet-form-container">
-            <div className="row">
+            <div className="row title">
               <div className="col-sm-12">
                 <div className="snippet-form-title">
                   <input type="text" name="title" className="form-control" placeholder="Title" required />
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col-sm-12">
+            <div className="row content">
+              <div className="col-sm-12" style={this.styles}>
                 <div className="snippet-body-wrapper clearfix">
                   <div className="col-sm-6 snippet-body-left">
                     <div className="snippet-form-tabs">
                       <span className="snippet-form-tab" style={{display: 'inline-block', backgroundColor: '#fff'}}>Write</span>
-                      <button type="button" className="comment-form-tab" data-toggle="modal" data-target="#markdown-help"><i className="fa fa-question-circle"></i>書き方</button>
+                      <button type="button" className="comment-form-tab" data-toggle="modal" data-target="#markdown-help"><i className="fa fa-question-circle"></i>How to markdown</button>
                     </div>
                     <div className="snippet-form-body-panel">
                       <textarea className="form-control snippet-form-body" onChange={this.parseMD} id="markdown-here" name="body" placeholder="Input Markdown..." required></textarea>
@@ -80,8 +74,8 @@ class ManageSnippet extends Component {
               </div>
             </div>
             <div className="row submit-btn-area">
-              <div className="col-sm-12">
-                <button className="btn u-btn pull-right"><i className="fa fa-pencil-square-o"></i>投稿する</button>
+              <div className="col-sm-12" style={this.styles}>
+                <button className="btn btn-success pull-right" style={{height: '90%'}}><i className="fa fa-pencil-square-o"></i>Post</button>
               </div>
             </div>
           </div>
