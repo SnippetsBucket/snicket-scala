@@ -54,7 +54,7 @@ class ManageSnippet extends Component {
             <div className="row">
               <div className="col-sm-12">
                 <div className="snippet-form-title">
-                  <input type="text" name="title" className="form-control" value="Title" required />
+                  <input type="text" name="title" className="form-control" placeholder="Title" required />
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@ class ManageSnippet extends Component {
                 <div className="snippet-body-wrapper clearfix">
                   <div className="col-sm-6 snippet-body-left">
                     <div className="snippet-form-tabs">
-                      <span className="snippet-form-tab" style={{display: 'inline-block', backgroundColor: '#fff'}}>本文</span>
+                      <span className="snippet-form-tab" style={{display: 'inline-block', backgroundColor: '#fff'}}>Write</span>
                       <button type="button" className="comment-form-tab" data-toggle="modal" data-target="#markdown-help"><i className="fa fa-question-circle"></i>書き方</button>
                     </div>
                     <div className="snippet-form-body-panel">
@@ -72,14 +72,14 @@ class ManageSnippet extends Component {
                   </div>
                   <div className="col-sm-6 snippet-body-right">
                     <div className="snippet-form-tabs">
-                      <span className="snippet-form-tab" style={{display: 'block'}}>プレビュー</span>
+                      <span className="snippet-form-tab" style={{display: 'block'}}>Preview</span>
                     </div>
                       <SnippetDetailPreview preview={this.props.snippets.previewHtml} />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="row">
+            <div className="row submit-btn-area">
               <div className="col-sm-12">
                 <button className="btn u-btn pull-right"><i className="fa fa-pencil-square-o"></i>投稿する</button>
               </div>

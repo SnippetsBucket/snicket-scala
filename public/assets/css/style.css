@@ -331,7 +331,9 @@ code {
 -------------------------------------*/
 
 .snippet-form-container {
-    padding: 0 0;
+    height: 100vh;
+    margin-top: -52px;
+    padding: 52px 0 0 0;
 }
 .snippet-form-container .row {
     margin: 0 0;
@@ -353,17 +355,19 @@ code {
     margin-bottom: 5px;
 }
 .snippet-form-wrapper {
-    padding: 5px 0 30px;
     background-color: #f8faf7;
+    /*background-color: #999;*/
+    min-height: 100vh;
+    margin: -52px auto auto auto;
+    padding-top: 52px;
 }
+
 .select2-container {
     width: 100% !important;
 }
-.snippet-body-wrapper {
-    margin-bottom: 15px;
-}
+
 .snippet-form-body {
-    min-height: 500px;
+    /*min-height: 500px;*/
     width: 100%;
     resize:none;
 }
@@ -399,7 +403,14 @@ code {
     -webkit-appearance: none;
     border-radius: 5px 0 0 0;
 }
+.snippet-form-body-panel {
+    height: 100vh;
+    margin-top: -153px;
+    padding-top: 153px;
+    padding-bottom: 34px;
+}
 .snippet-form-body-panel textarea {
+    height: 100%;
     border: none;
     outline: none;
     border-radius: 0;
@@ -413,7 +424,7 @@ code {
     max-height: 450px;
 }
 .snippet-body-left {
-    min-height: 500px;
+    /*min-height: 500px;*/
     background-color: #fff;
     padding: 0;
     border-radius: 5px 0 0 5px;
@@ -422,7 +433,7 @@ code {
     border-bottom: 1px solid #ddd;
 }
 .snippet-body-right {
-    min-height: 500px;
+    /*min-height: 500px;*/
     background-color: #fff;
     padding: 0;
     border-radius: 0 5px 5px 0;
@@ -430,13 +441,19 @@ code {
 }
 .snippet-form-body-preview-panel {
     padding: 6px 12px;
-    max-height: 500px;
+    /*max-height: 500px;*/
     overflow: auto;
-    min-height: 500px;
+    /*min-height: 500px;*/
 }
 .snippet-form-body-preview-panel > pre {
     border: none;
     background-color: #f7f7f7;
     padding: 16px;
     border-radius: 3px;
+}
+.submit-btn-area {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #fafafa;
 }
