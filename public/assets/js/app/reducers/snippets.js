@@ -3,7 +3,8 @@ import * as types from '../constants/ActionTypes';
 const initialState = {
   isFetching: false,
   items: [],
-  error: false
+  error: false,
+  previewHtml: ''
 };
 
 function snippets(state = initialState, action = null) {
@@ -35,6 +36,11 @@ function snippets(state = initialState, action = null) {
     case types.POST_DATA:
       return Object.assign({}, state, {
         items: [action.snippet, ...state.items]
+      });
+
+    case types.CHANGE_PREVIEW:
+      return Object.assign({}, state, {
+        previewHtml: action.data
       });
 
     default:
