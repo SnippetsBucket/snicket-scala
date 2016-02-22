@@ -8,6 +8,7 @@ GET     /dev/codegen                controllers.Application.codegen
 
 # API
 GET     /api/snippet/list           controllers.api.SnippetController.list
+GET     /api/snippet/get/:id        controllers.api.SnippetController.item(id: Long)
 POST    /api/snippet/create         controllers.api.SnippetController.create
 PUT     /api/snippet/update         controllers.api.SnippetController.update
 DELETE  /api/snippet/remove/:id     controllers.api.SnippetController.remove(id: Long)

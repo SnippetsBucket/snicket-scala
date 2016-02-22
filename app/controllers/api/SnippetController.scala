@@ -26,10 +26,13 @@ object SnippetController {
   case class ResultList(code: Int, list: Seq[Snippet])
   implicit val resultListWrites = Json.writes[ResultList]
 
+  case class ResultItem(code: Int, item: Snippet)
+  implicit val resultItemWrites = Json.writes[ResultItem]
+
 }
 
 class SnippetController @Inject()(val dbConfigProvider: DatabaseConfigProvider, val messagesApi: MessagesApi)
-  extends Controller with HasDatabaseConfigProvider[JdbcProfile] with I18nSupport{
+  extends Controller with HasDatabaseConfigProvider[JdbcProfile] with I18nSupport {
 
   import SnippetController._
 
@@ -51,8 +54,16 @@ class SnippetController @Inject()(val dbConfigProvider: DatabaseConfigProvider, 
       }
     }.recoverTotal { e =>
       Future {
-        BadRequest(Json.obj("code" -> 1, "result" ->"failure", "error" -> JsError.toJson(e)))
+        BadRequest(Json.obj("code" -> 1, "result" -> "failure", "error" -> JsError.toJson(e)))
       }
+    }
+  }
+
+  def item(id: Long) = Action.async { implicit rs =>
+    val result = db.run(Snippets.filter(_.snippetId === id).result.headOption)
+    result.map { snippet =>
+      val item = Snippet(snippet.get.snippetId, snippet.get.snippetTitle, snippet.get.snippetText, snippet.get.userId, snippet.get.createdAt, snippet.get.updatedAt)
+      Ok(Json.toJson(ResultItem(0, item)))
     }
   }
 
@@ -65,7 +76,7 @@ class SnippetController @Inject()(val dbConfigProvider: DatabaseConfigProvider, 
       }
     }.recoverTotal { e =>
       Future {
-        BadRequest(Json.obj("code" -> 1, "result" ->"failure", "error" -> JsError.toJson(e)))
+        BadRequest(Json.obj("code" -> 1, "result" -> "failure", "error" -> JsError.toJson(e)))
       }
     }
   }
