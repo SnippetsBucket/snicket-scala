@@ -28,6 +28,13 @@ function receiveSuccess(json) {
   };
 }
 
+function fetchedItem(json) {
+  return {
+    type: types.FETCHED_ITEM,
+    data: json
+  };
+}
+
 export function fetchData(url) {
   return dispatch => {
     dispatch(requestData());
@@ -48,6 +55,25 @@ export function fetchData(url) {
   };
 }
 
+export function fetchItem(url) {
+  return dispatch => {
+    dispatch(requestData());
+
+    return axios({
+      url,
+      timeout: 20000,
+      method: 'get',
+      responseType: 'json'
+    })
+      .then(res => {
+        dispatch(fetchedItem(res.data));
+      })
+      .catch(res => {
+        dispatch(receiveError(res.data));
+        //dispatch(pushState(null, '/error'));
+      });
+  };
+}
 
 function addSnippet(json) {
   return {

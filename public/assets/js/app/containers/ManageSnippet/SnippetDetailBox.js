@@ -4,16 +4,24 @@ import { bindActionCreators } from 'redux';
 import Header from '../../components/layout/header/';
 import SnippetDetailHeader from '../../components/SnippetDetailHeader';
 import SnippetDetailItem from '../../components/SnippetDetailItem';
+import { fetchItem } from '../../actions';
 
 class SnippetDetailBox extends Component {
 
+  componentWillMount() {
+    console.log(this.props.params.snippetId);
+    this.props.fetchItem(`/api/snippet/get/${this.props.params.snippetId}`);
+  }
+
   render() {
+    const item = this.props.snippets.item;
+    console.log(item);
     return (
       <div>
       <Header />
       <div className="item-wrapper">
-        <SnippetDetailHeader />
-        <SnippetDetailItem />
+        <SnippetDetailHeader snippet={item} />
+        <SnippetDetailItem snippet={item} />
       </div>
       </div>
     );
@@ -21,7 +29,7 @@ class SnippetDetailBox extends Component {
 }
 
 SnippetDetailBox.propTypes = {
-  //postData: PropTypes.func.isRequired,
+  fetchItem: PropTypes.func.isRequired
   //snippets: PropTypes.object.isRequired
 };
 
@@ -33,7 +41,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    //postData
+    fetchItem
   }, dispatch);
 }
 

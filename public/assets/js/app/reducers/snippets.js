@@ -38,6 +38,11 @@ function snippets(state = initialState, action = null) {
         items: [action.snippet, ...state.items]
       });
 
+    case types.FETCHED_ITEM:
+      return Object.assign({}, state, {
+        item: action.data
+      });
+
     case types.CHANGE_PREVIEW:
       return Object.assign({}, state, {
         previewHtml: action.data
