@@ -21,7 +21,8 @@ libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick" % "3.1.0",
   "com.typesafe.slick" %% "slick-codegen" % "3.1.0",
   "com.typesafe.play" %% "play-slick" % "1.1.1",
-  "org.flywaydb" %% "flyway-play" % "2.2.1"
+  "org.flywaydb" %% "flyway-play" % "2.2.1",
+  "org.scalaz" %% "scalaz-core" % "7.2.0"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
