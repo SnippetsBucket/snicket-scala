@@ -26,7 +26,7 @@ object SnippetController {
   case class ResultList(code: Int, list: Seq[Snippet])
   implicit val resultListWrites = Json.writes[ResultList]
 
-  case class ResultItem(code: Int, item: Snippet)
+  case class ResultItem(code: Int, snippetInfo: Snippet)
   implicit val resultItemWrites = Json.writes[ResultItem]
 
 }
