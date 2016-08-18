@@ -1,3 +1,5 @@
 # Snicket
 
-Snicket is a Qiita clone.
+### !!Deprecation!!
+
+Snicket is knowledge management tool.
